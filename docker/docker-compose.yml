@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  backend:
+    container_name: excuses_back
+    image: "node:18"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=dev
+    volumes:
+      - ../:/home/node/app
+    ports:
+      - "7777:3000"
+    command: "npm run dev"
